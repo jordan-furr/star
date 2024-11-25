@@ -9,7 +9,7 @@
             <p>10% of sales are donated directly to Trans individuals.</p>
         </div>
         <div class="text-center w-100">
-            <img class="w-100" src="/img/starlaces-pronouns.jpeg" alt="three models wearing star laces">
+            <img class="w-100" src="/img/starlaces-pronouns.jpeg" alt="three models wearing star laces" loading="lazy">
         </div>
     </div>
 </template>
