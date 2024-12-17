@@ -761,6 +761,39 @@ a:hover {
     padding-right: 50px;
     margin-bottom: 48px;
     padding-top: 10px;
+    cursor: crosshair;
+}
+
+.shop-button {
+    position: absolute;
+    right: 3rem;
+    top: 2rem
+}
+
+
+
+@media (max-width: 600px) {
+    .logo {
+        width: 45% !important;
+    }
+    
+    .shop-cont {
+        margin-bottom: 4.5rem;
+    }
+    .starlace {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .shop-button {
+        right: 1.5rem;
+        top: 1.5rem;
+    }
+}
+
+@media (min-width: 601px) {
+    .mobile-menu {
+        display: none;
+    }
 }
 
 @media (max-width: 470px) {
@@ -770,27 +803,12 @@ a:hover {
         padding-left: 0.5rem;
         padding-right: 0.5rem;
     }  
-}
-
-@media (max-width: 600px) {
+    .shop-button {
+        top: 1.25rem !important;
+        right: 1.25rem !important ;
+    }
     .logo {
-        width: 80px;
-    }
-    .menu-bar {
-        display: none;
-    }
-    .shop-cont {
-        margin-bottom: 4.5rem;
-    }
-    .starlace {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-}
-
-@media (min-width: 601px) {
-    .mobile-menu {
-        display: none;
+        width: 55% !important;
     }
 }
 
@@ -810,6 +828,10 @@ a:hover {
     .starlace {
         padding-left: 20px;
         padding-right: 20px;
+    }
+
+    .shop-button {
+        right: 2rem;
     }
     
 }
