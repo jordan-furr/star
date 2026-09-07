@@ -8,7 +8,20 @@
                 --->
             </div>
             <div class="text-center margin-a">
-                <a href="/"><img class="logo" src="/img/starlaces.png" alt="star laces llc"></a>
+                <!-- Deliberately a single source, no srcset. .logo is a percentage
+                     width inside a shrink-to-fit flex parent, so the image's
+                     intrinsic width feeds back into the layout; a srcset changes
+                     that intrinsic width (it is divided by the selected density)
+                     and shrinks the logo on mobile. At 27KB there is nothing to
+                     gain from serving smaller variants here. -->
+                <a href="/"><img
+                    class="logo"
+                    src="/img/starlaces-960.webp"
+                    alt="star laces llc"
+                    width="2342"
+                    height="510"
+                    fetchpriority="high"
+                ></a>
                 
             </div>
             <div class="flex flex-end menu-bar">
