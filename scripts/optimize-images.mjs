@@ -3,10 +3,10 @@
 // photo. Only public/img is deployed; img-source/ never ships.
 //
 // sharp is held at 0.33.x on purpose. It is a dev-only tool that the site
-// build never touches, but Netlify still installs it, and 0.34+ requires Node
-// >=20.9 while the Netlify environment runs Node 18. A newer sharp fails the
-// dependency install and takes the whole deploy down. Raise the Node version
-// there before raising this.
+// build never touches, but the deploy still installs it, so its engine range
+// has to cover whatever Node the build runs. 0.33.x spans Node 18 through 24;
+// 0.34+ requires >=20.9 and would break any build still on 18. There is no
+// reason to raise it - nothing here needs a newer sharp.
 //
 // Widths are chosen from how each image is actually laid out in style.css, at
 // up to 2x device pixel ratio. If the layout changes, change these too.
