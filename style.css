@@ -1,18 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
-
 :root {
     --tan: #ffeac2;
 }
 
 html,
 body {
-    height: 100vh;
-    width: 100vw;
     margin: 0;
     padding: 0;
-    scroll-behavior: smooth !important;
 }
+
+/* No `width: 100vw` here: 100vw includes the scrollbar, so on platforms with
+   classic (space-taking) scrollbars it makes the page wider than the viewport.
+   The default `auto` width already fills the viewport, correctly. Likewise no
+   `height: 100vh`, which caps the box at one screen and leaves the content
+   overflowing it; min-height below is what actually wants saying. */
 
 body {
     min-height: 100vh;
@@ -20,8 +20,24 @@ body {
     overflow-y: scroll;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
 p {
     margin: 0;
+}
+
+/* Images are sized by their width/height attributes (which reserve layout space
+   and prevent shift); let the height follow the aspect ratio. */
+img {
+    height: auto;
 }
 
 h1,
