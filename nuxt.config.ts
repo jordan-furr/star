@@ -6,6 +6,19 @@ export default defineNuxtConfig({
 
   app: {
     head: {
+      // Every page was rendering with an empty <title> and no lang, so tabs and
+      // search results showed the bare URL and screen readers had to guess.
+      title: 'STAR Laces',
+      htmlAttrs: { lang: 'en' },
+      meta: [
+        {
+          name: 'description',
+          content:
+            'STAR Laces demands celebration and recognition of Trans individuals, ' +
+            'using fashion to elevate Trans voices. 10% of sales are donated ' +
+            'directly to Trans individuals.',
+        },
+      ],
       link: [
         // Fonts are loaded here rather than via @import in style.css: an @import
         // is a chained blocking request (the browser has to download and parse

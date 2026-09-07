@@ -4,17 +4,30 @@
 
 html,
 body {
-    height: 100vh;
-    width: 100vw;
     margin: 0;
     padding: 0;
-    scroll-behavior: smooth !important;
 }
+
+/* No `width: 100vw` here: 100vw includes the scrollbar, so on platforms with
+   classic (space-taking) scrollbars it makes the page wider than the viewport.
+   The default `auto` width already fills the viewport, correctly. Likewise no
+   `height: 100vh`, which caps the box at one screen and leaves the content
+   overflowing it; min-height below is what actually wants saying. */
 
 body {
     min-height: 100vh;
     overflow-x: hidden;
     overflow-y: scroll;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
 }
 
 p {
