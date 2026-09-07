@@ -2,6 +2,12 @@
 // masters in img-source/. Run with `yarn images` after adding or replacing a
 // photo. Only public/img is deployed; img-source/ never ships.
 //
+// sharp is held at 0.33.x on purpose. It is a dev-only tool that the site
+// build never touches, but Netlify still installs it, and 0.34+ requires Node
+// >=20.9 while the Netlify environment runs Node 18. A newer sharp fails the
+// dependency install and takes the whole deploy down. Raise the Node version
+// there before raising this.
+//
 // Widths are chosen from how each image is actually laid out in style.css, at
 // up to 2x device pixel ratio. If the layout changes, change these too.
 import sharp from 'sharp';
